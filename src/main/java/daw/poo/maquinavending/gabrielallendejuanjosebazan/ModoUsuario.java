@@ -11,5 +11,6 @@ public class ModoUsuario {
     private Productos producto4;
     private Productos producto5;
     private Productos producto6;
+    private boolean metodoPago; //true efectivo; false tarjeta.
     
 }

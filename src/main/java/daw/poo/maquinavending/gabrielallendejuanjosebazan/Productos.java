@@ -10,12 +10,16 @@ package daw.poo.maquinavending.gabrielallendejuanjosebazan;
 public class Productos {
     //Atributos de la clase Productos:
     private String nombreProducto;
-    private double precioProducto;
+    private int precioProducto; //Precio de producto en CÉNTIMOS.
 
     //Constructor parametrizado.
-    public Productos(String nombreProducto, double precioProducto) {
+    public Productos(String nombreProducto, int precioProducto) {
         this.nombreProducto = nombreProducto;
         this.precioProducto = precioProducto;
+        //Restricción que controla que el precio de un producto nunca pueda ser negativo.
+        if(precioProducto < 0){
+            this.precioProducto = Math.abs(precioProducto);
+        }
     }
 
     //Constructor con sus valores predeterminados.
@@ -36,7 +40,10 @@ public class Productos {
         return precioProducto;
     }
 
-    public void setPrecioProducto(double precioProducto) {
+    public void setPrecioProducto(int precioProducto) {
+        if(precioProducto < 0){
+            this.precioProducto = Math.abs(precioProducto);
+        }
         this.precioProducto = precioProducto;
     }
     
