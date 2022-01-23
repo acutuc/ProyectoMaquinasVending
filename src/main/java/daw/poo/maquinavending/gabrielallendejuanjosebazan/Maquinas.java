@@ -1,6 +1,6 @@
 package daw.poo.maquinavending.gabrielallendejuanjosebazan;
 
-import java.util.Scanner;
+import java.util.UUID;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -23,6 +23,7 @@ public class Maquinas {
     private Bandejas bandeja6;
     private boolean modoUsuario; //false modo usuario; true modo administrador;
     private boolean metodoPago; //false efectivo; true tarjeta.
+    private static UUID numeroSerie;
 
     //Constructor con sus valores por defecto.
     public Maquinas() {
@@ -39,6 +40,14 @@ public class Maquinas {
         this.bandeja6 = bandeja6;
         this.modoUsuario = modoUsuario;
         this.metodoPago = metodoPago;
+        
+    }
+    
+    //Método NUMERO SERIE
+    public static UUID numeroSerie(){
+        numeroSerie = UUID.randomUUID();
+        
+        return numeroSerie;
     }
     
     //Getters.
@@ -73,7 +82,10 @@ public class Maquinas {
     public boolean isMetodoPago() {
         return metodoPago;
     }
-    
+
+    public static UUID getNumeroSerie() {
+        return numeroSerie;
+    }
     
     //Setters.
     public void setBandeja1(Bandejas bandeja1) {
@@ -108,6 +120,11 @@ public class Maquinas {
 
     public void setMetodoPago(boolean metodoPago) {
         this.metodoPago = metodoPago;
+    }
+
+    // Revisar ->
+    public static void setNumeroSerie(UUID numeroSerie) {
+        Maquinas.numeroSerie = numeroSerie;
     }
     
     
