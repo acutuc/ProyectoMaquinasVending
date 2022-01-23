@@ -13,4 +13,6 @@ public class ModoUsuario {
     private Productos producto6;
     private boolean metodoPago; //true efectivo; false tarjeta.
     
+    
+    //ESTO ESTÁ DE PRUEBA. VER EN MÁQUINAS PORQUE QUIZÁ SE PUEDA INTRODUCIR ALLÍ MEDIANTE UN BOOLEAN ENTRE USUARIO Y ADMIN.
 }

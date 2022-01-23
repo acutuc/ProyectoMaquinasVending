@@ -1,7 +1,7 @@
-
 package daw.poo.maquinavending.gabrielallendejuanjosebazan;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,56 +14,68 @@ public class TestMaquinas {
      */
     public static void main(String[] args) {
         //PRUEBAS DE DEVOLUCIÓN DE MONEDAS
-        Productos producto1 = new Productos("Coca-Cola 500ml", 120);
+        //Instanciación de objetos tipo Productos.
+        Productos cocaCola = new Productos("Coca-Cola 500ml", 120);
+        Productos kitKat = new Productos("Kit-Kat", 150);
+        Productos agua = new Productos("Agua 500ml", 100);
+        Productos smint = new Productos("Caramelos Smint", 100);
+        Productos fantaNaranja = new Productos("Fanta Naranja 500ml", 120);
+        Productos haribbo = new Productos("Caramelos Haribbo", 200);
         Scanner entrada = new Scanner(System.in);
-        int centimos;
+        //AQUI ARRIBA FALTAN INSTANCIAR LAS BANDEJAS, QUE CONTENDRÁN CADA UNA LOS DIFERENTES PRODUCTOS.
+        
+        //Conversión implícita de String a int, mediante la clase Integer.
+        Integer.parseInt(JOptionPane.showInputDialog("Introduzca un código: "));
+        int opcionElegida = entrada.nextInt();
+        
         //Bucle que controle la cantidad de monedas a devolver en caso de haber cambio.
+        int centimos;
         do {
-            System.out.print("\nCantidad introducida (en céntimos): ");
+            Integer.parseInt(JOptionPane.showInputDialog("Introduzca el dinero: "));
             centimos = entrada.nextInt();
-            if(centimos < producto1.getPrecioProducto()){
-                System.out.println("Cantidad insuficiente.");
+            if(centimos < cocaCola.getPrecioProducto()){
+                Integer.parseInt(JOptionPane.showInputDialog("Cantidad insuficiente."));
             }
-        } while (centimos < producto1.getPrecioProducto());
+        } while (centimos < cocaCola.getPrecioProducto());
          
-        if(centimos == producto1.getPrecioProducto()){
-            System.out.println("Has introducido la cantidad exacta.");
+        if(centimos == cocaCola.getPrecioProducto()){
+            Integer.parseInt(JOptionPane.showInputDialog("Ha introducido la cantidad exacta. No tendrá cambio."));
         } else {
-            centimos -= producto1.getPrecioProducto();
-            System.out.println("El cambio será:");
+            centimos -= cocaCola.getPrecioProducto();
+            Integer.parseInt(JOptionPane.showInputDialog("El cambio será de:"));
             if(centimos/200 > 0){
-                System.out.println("Monedas de 2€: %d" + centimos/200);
+                Integer.parseInt(JOptionPane.showInputDialog("Monedas de 2€: %d" + centimos/200));
                 centimos %= 200;
             }
             if(centimos/100>0){
-                System.out.println("Monedas de 1€: %d" + centimos/100);
+                Integer.parseInt(JOptionPane.showInputDialog("Monedas de 1€: %d" + centimos/100));
                 centimos %= 100;
             }
             if(centimos/50>0){
-                System.out.println("%nMonedas de 0,50€: %d" + centimos/50);
+                Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,50€: %d" + centimos/50));
                 centimos %= 50;
             }
             if(centimos/20>0){
-                System.out.println("%nMonedas de 0,20€: %d" + centimos/20);
+                Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,20€: %d" + centimos/20));
                 centimos %= 20;
             }
             if(centimos/10>0){
-                System.out.println("%nMonedas de 0,10€: %d" + centimos/10);
+                Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,10€: %d" + centimos/10));
                 centimos %= 10;
             }
             if(centimos/5>0){
-                System.out.println("%nMonedas de 0,05€: %d" + centimos/5);
+                Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,05€: %d" + centimos/5));
                 centimos %= 5;
             }
             if(centimos/2>0){
-                System.out.println("%nMonedas de 0,02€: %d" + centimos/2);
+                Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,02€: %d" + centimos/2));
                 centimos %= 2;
             }
             if(centimos>0){
-                System.out.printf("%nMonedas de 0,01€: %d", centimos);
+                Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,01€: %d", centimos));
             }
         }
-        System.out.printf("%n%nGracias por su compra"); 
+        JOptionPane.showInputDialog("¡Gracias por su compra!");
     }
 }
    
