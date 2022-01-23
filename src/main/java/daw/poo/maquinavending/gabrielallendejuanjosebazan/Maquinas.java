@@ -1,5 +1,7 @@
 package daw.poo.maquinavending.gabrielallendejuanjosebazan;
 
+import java.util.Scanner;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -100,9 +102,11 @@ public class Maquinas {
 
     public void setModoUsuario(boolean modoUsuario) {
         this.modoUsuario = modoUsuario;
+        Scanner teclado = new Scanner(System.in);
         
         if (this.modoUsuario == false){
-            final int PRECIO;
+            // que precio quieres poner? le he puesto 0 pa que no de error
+            final int PRECIO = 0;
         int centimos;
         //Bucle que 
         do {
