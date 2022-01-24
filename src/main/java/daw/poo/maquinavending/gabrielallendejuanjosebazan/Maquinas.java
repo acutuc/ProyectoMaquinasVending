@@ -23,7 +23,7 @@ public class Maquinas {
     private Bandejas bandeja6;
     private boolean modoUsuario; //false modo usuario; true modo administrador;
     private boolean metodoPago; //false efectivo; true tarjeta.
-    private static UUID numeroSerie;
+    private UUID numeroSerie;
 
     //Constructor con sus valores por defecto.
     public Maquinas() {
@@ -43,8 +43,8 @@ public class Maquinas {
         
     }
     
-    //Método NUMERO SERIE
-    public static UUID numeroSerie(){
+    //Método NUMERO SERIE ¿?
+    public UUID numeroSerie(){
         numeroSerie = UUID.randomUUID();
         
         return numeroSerie;
@@ -83,7 +83,7 @@ public class Maquinas {
         return metodoPago;
     }
 
-    public static UUID getNumeroSerie() {
+    public UUID getNumeroSerie() {
         return numeroSerie;
     }
     
@@ -123,8 +123,8 @@ public class Maquinas {
     }
 
     // Revisar ->
-    public static void setNumeroSerie(UUID numeroSerie) {
-        Maquinas.numeroSerie = numeroSerie;
+    public void setNumeroSerie(UUID numeroSerie) {
+        this.numeroSerie = numeroSerie;
     }
     
     
