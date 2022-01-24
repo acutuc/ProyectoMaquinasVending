@@ -87,7 +87,7 @@ public class Maquinas {
         return numeroSerie;
     }
     
-    //Setters.
+    //Setters. Set modo usuario y método de pago no hay. Cambiados por métodos.
     public void setBandeja1(Bandejas bandeja1) {
         this.bandeja1 = bandeja1;
     }
@@ -111,21 +111,28 @@ public class Maquinas {
     public void setBandeja6(Bandejas bandeja6) {
         this.bandeja6 = bandeja6;
     }
-
-    public void setModoUsuario(boolean modoUsuario) {
-        this.modoUsuario = modoUsuario;
-    }
     
-    
-
-    public void setMetodoPago(boolean metodoPago) {
-        this.metodoPago = metodoPago;
-    }
 
     // Revisar ->
     public void setNumeroSerie(UUID numeroSerie) {
         this.numeroSerie = numeroSerie;
     }
     
+    public void pagarEfectivo(){
+        this.metodoPago = false;
+        
+    }
+    
+    public void pagarTarjeta(){
+        this.metodoPago = true;
+    }
+    
+    public void modoUsuario(){
+        this.modoUsuario = false;
+    }
+    
+    public void modoAdmin(){
+        this.modoUsuario = true;
+    }
     
 }
