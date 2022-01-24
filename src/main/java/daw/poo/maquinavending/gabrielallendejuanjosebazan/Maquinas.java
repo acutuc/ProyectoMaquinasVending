@@ -7,13 +7,13 @@ import java.util.UUID;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Gabriel
  */
 //Definición de la clase
 public class Maquinas {
+
     //Atributos de la clase Maquinas.
     private Bandejas bandeja1;
     private Bandejas bandeja2;
@@ -21,16 +21,15 @@ public class Maquinas {
     private Bandejas bandeja4;
     private Bandejas bandeja5;
     private Bandejas bandeja6;
-    private boolean modoUsuario; //false modo usuario; true modo administrador;
-    private boolean metodoPago; //false efectivo; true tarjeta.
+    private boolean modoUsuario; //false modo usuario; true modo administrador; MIRAR EN EL MAIN PARA CAMBIARLO POR UN SWITCH.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    private boolean metodoPago; //false efectivo; true tarjeta.                 MIRAR EN EL MAIN PARA CAMBIARLO POR UN SWITCH.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     private UUID numeroSerie;
 
     //Constructor con sus valores por defecto.
     public Maquinas() {
     }
-    
-    //Constructor parametrizado.
 
+    //Constructor parametrizado.
     public Maquinas(Bandejas bandeja1, Bandejas bandeja2, Bandejas bandeja3, Bandejas bandeja4, Bandejas bandeja5, Bandejas bandeja6, boolean modoUsuario, boolean metodoPago) {
         this.bandeja1 = bandeja1;
         this.bandeja2 = bandeja2;
@@ -40,16 +39,16 @@ public class Maquinas {
         this.bandeja6 = bandeja6;
         this.modoUsuario = modoUsuario;
         this.metodoPago = metodoPago;
-        
+
     }
-    
+
     //Método NUMERO SERIE ¿?
-    public UUID numeroSerie(){
+    public UUID numeroSerie() {
         numeroSerie = UUID.randomUUID();
-        
+
         return numeroSerie;
     }
-    
+
     //Getters.
     public Bandejas getBandeja1() {
         return bandeja1;
@@ -86,7 +85,7 @@ public class Maquinas {
     public UUID getNumeroSerie() {
         return numeroSerie;
     }
-    
+
     //Setters. Set modo usuario y método de pago no hay. Cambiados por métodos.
     public void setBandeja1(Bandejas bandeja1) {
         this.bandeja1 = bandeja1;
@@ -111,28 +110,26 @@ public class Maquinas {
     public void setBandeja6(Bandejas bandeja6) {
         this.bandeja6 = bandeja6;
     }
-    
 
     // Revisar ->
     public void setNumeroSerie(UUID numeroSerie) {
         this.numeroSerie = numeroSerie;
     }
-    
-    public void pagarEfectivo(){
-        this.metodoPago = false;
-        
+
+    public void metodoPago() {
+        if (this.metodoPago == false) {
+            //Método de pago en efectivo.
+        } else {
+            //Método de pago en tarjeta.
+        }
+
     }
-    
-    public void pagarTarjeta(){
-        this.metodoPago = true;
+
+    public void modoUsuario() {
+        if (this.modoUsuario == false) {
+            //Modo usuario activado.
+        } else {
+            //Modo admin activado.
+        }
     }
-    
-    public void modoUsuario(){
-        this.modoUsuario = false;
-    }
-    
-    public void modoAdmin(){
-        this.modoUsuario = true;
-    }
-    
 }
