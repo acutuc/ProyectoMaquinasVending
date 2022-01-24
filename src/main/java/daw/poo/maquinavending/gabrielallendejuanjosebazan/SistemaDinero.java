@@ -8,6 +8,7 @@ public class SistemaDinero {
     private double efectivo;
     private double tarjeta;
 
+    //REVISAR
     public SistemaDinero(double efectivo, double tarjeta) {
         this.efectivo = efectivo;
         this.tarjeta = tarjeta;

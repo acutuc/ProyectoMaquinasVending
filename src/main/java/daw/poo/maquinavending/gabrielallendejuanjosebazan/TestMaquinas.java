@@ -23,309 +23,309 @@ public class TestMaquinas {
         Scanner entrada = new Scanner(System.in);
         //AQUI ARRIBA FALTAN INSTANCIAR LAS BANDEJAS, QUE CONTENDRÁN CADA UNA LOS DIFERENTES PRODUCTOS.
 
-        Integer.parseInt(JOptionPane.showInputDialog("Introduzca un código: "));
-        int opcionElegida = entrada.nextInt();
+        String opcionString = (JOptionPane.showInputDialog("Introduzca un código: "));
+        int opcionInt = Integer.parseInt(opcionString);
         //Variable boolean auxiliar para salir del bucle.
         boolean aux = true;
 
         //Variable centimos
         int centimos;
         do {
-            switch (opcionElegida) {
+            switch (opcionInt) {
                 //CAMBIAR LOS CASE POR CÓDIGO DE BANDEJAS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
                 case 1:
                     do {
-                        Integer.parseInt(JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
-                        centimos = entrada.nextInt();
+                        String centimosString = (JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
+                        centimos = Integer.parseInt(centimosString);
                         if (centimos < cocaCola.getPrecioProducto()) {
-                            Integer.parseInt(JOptionPane.showInputDialog("Cantidad insuficiente."));
+                            JOptionPane.showMessageDialog(null, "Cantidad insuficiente.");
                         }
                     } while (centimos < cocaCola.getPrecioProducto());
 
                     if (centimos == cocaCola.getPrecioProducto()) {
-                        Integer.parseInt(JOptionPane.showInputDialog("Ha introducido la cantidad exacta. No tendrá cambio."));
+                        JOptionPane.showMessageDialog(null, "Ha introducido la cantidad exacta. No tendrá cambio.");
                     } else {
                         centimos -= cocaCola.getPrecioProducto();
-                        Integer.parseInt(JOptionPane.showInputDialog("El cambio será de:"));
+                        JOptionPane.showMessageDialog(null, "El cambio será de:");
                         if (centimos / 200 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("Monedas de 2€: %d" + centimos / 200));
+                            JOptionPane.showMessageDialog(null, "Monedas de 2€: " + centimos / 200);
                             centimos %= 200;
                         }
                         if (centimos / 100 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("Monedas de 1€: %d" + centimos / 100));
+                            JOptionPane.showMessageDialog(null, "Monedas de 1€: " + centimos / 100);
                             centimos %= 100;
                         }
                         if (centimos / 50 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,50€: %d" + centimos / 50));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,50€: " + centimos / 50);
                             centimos %= 50;
                         }
                         if (centimos / 20 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,20€: %d" + centimos / 20));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,20€: " + centimos / 20);
                             centimos %= 20;
                         }
                         if (centimos / 10 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,10€: %d" + centimos / 10));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,10€: " + centimos / 10);
                             centimos %= 10;
                         }
                         if (centimos / 5 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,05€: %d" + centimos / 5));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,05€: " + centimos / 5);
                             centimos %= 5;
                         }
                         if (centimos / 2 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,02€: %d" + centimos / 2));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,02€: " + centimos / 2);
                             centimos %= 2;
                         }
                         if (centimos > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,01€: %d", centimos));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,01€: " + centimos);
                         }
                     }
-                    JOptionPane.showInputDialog("¡Gracias por su compra!");
-                    aux = false;
+                    JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
+                    aux = true;
                     break;
                 case 2:
                     do {
-                        Integer.parseInt(JOptionPane.showInputDialog("Ha seleccionado Kit-Kat. Introduzca el dinero: "));
-                        centimos = entrada.nextInt();
+                        String centimosString = (JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
+                        centimos = Integer.parseInt(centimosString);
                         if (centimos < kitKat.getPrecioProducto()) {
-                            Integer.parseInt(JOptionPane.showInputDialog("Cantidad insuficiente."));
+                            JOptionPane.showMessageDialog(null, "Cantidad insuficiente.");
                         }
                     } while (centimos < kitKat.getPrecioProducto());
 
                     if (centimos == kitKat.getPrecioProducto()) {
-                        Integer.parseInt(JOptionPane.showInputDialog("Ha introducido la cantidad exacta. No tendrá cambio."));
+                        JOptionPane.showMessageDialog(null, "Ha introducido la cantidad exacta. No tendrá cambio.");
                     } else {
                         centimos -= kitKat.getPrecioProducto();
-                        Integer.parseInt(JOptionPane.showInputDialog("El cambio será de:"));
+                        JOptionPane.showMessageDialog(null, "El cambio será de:");
                         if (centimos / 200 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("Monedas de 2€: %d" + centimos / 200));
+                            JOptionPane.showMessageDialog(null, "Monedas de 2€: " + centimos / 200);
                             centimos %= 200;
                         }
                         if (centimos / 100 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("Monedas de 1€: %d" + centimos / 100));
+                            JOptionPane.showMessageDialog(null, "Monedas de 1€: " + centimos / 100);
                             centimos %= 100;
                         }
                         if (centimos / 50 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,50€: %d" + centimos / 50));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,50€: " + centimos / 50);
                             centimos %= 50;
                         }
                         if (centimos / 20 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,20€: %d" + centimos / 20));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,20€: " + centimos / 20);
                             centimos %= 20;
                         }
                         if (centimos / 10 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,10€: %d" + centimos / 10));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,10€: " + centimos / 10);
                             centimos %= 10;
                         }
                         if (centimos / 5 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,05€: %d" + centimos / 5));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,05€: " + centimos / 5);
                             centimos %= 5;
                         }
                         if (centimos / 2 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,02€: %d" + centimos / 2));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,02€: " + centimos / 2);
                             centimos %= 2;
                         }
                         if (centimos > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,01€: %d", centimos));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,01€: " + centimos);
                         }
                     }
-                    JOptionPane.showInputDialog("¡Gracias por su compra!");
-                    aux = false;
+                    JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
+                    aux = true;
                     break;
                 case 3:
                     do {
-                        Integer.parseInt(JOptionPane.showInputDialog("Ha seleccionado Agua 500ml. Introduzca el dinero: "));
-                        centimos = entrada.nextInt();
+                        String centimosString = (JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
+                        centimos = Integer.parseInt(centimosString);
                         if (centimos < agua.getPrecioProducto()) {
-                            Integer.parseInt(JOptionPane.showInputDialog("Cantidad insuficiente."));
+                            JOptionPane.showMessageDialog(null, "Cantidad insuficiente.");
                         }
                     } while (centimos < agua.getPrecioProducto());
 
                     if (centimos == agua.getPrecioProducto()) {
-                        Integer.parseInt(JOptionPane.showInputDialog("Ha introducido la cantidad exacta. No tendrá cambio."));
+                        JOptionPane.showMessageDialog(null, "Ha introducido la cantidad exacta. No tendrá cambio.");
                     } else {
                         centimos -= agua.getPrecioProducto();
-                        Integer.parseInt(JOptionPane.showInputDialog("El cambio será de:"));
+                        JOptionPane.showMessageDialog(null, "El cambio será de:");
                         if (centimos / 200 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("Monedas de 2€: %d" + centimos / 200));
+                            JOptionPane.showMessageDialog(null, "Monedas de 2€: " + centimos / 200);
                             centimos %= 200;
                         }
                         if (centimos / 100 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("Monedas de 1€: %d" + centimos / 100));
+                            JOptionPane.showMessageDialog(null, "Monedas de 1€: " + centimos / 100);
                             centimos %= 100;
                         }
                         if (centimos / 50 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,50€: %d" + centimos / 50));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,50€: " + centimos / 50);
                             centimos %= 50;
                         }
                         if (centimos / 20 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,20€: %d" + centimos / 20));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,20€: " + centimos / 20);
                             centimos %= 20;
                         }
                         if (centimos / 10 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,10€: %d" + centimos / 10));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,10€: " + centimos / 10);
                             centimos %= 10;
                         }
                         if (centimos / 5 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,05€: %d" + centimos / 5));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,05€: " + centimos / 5);
                             centimos %= 5;
                         }
                         if (centimos / 2 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,02€: %d" + centimos / 2));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,02€: " + centimos / 2);
                             centimos %= 2;
                         }
                         if (centimos > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,01€: %d", centimos));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,01€: " + centimos);
                         }
                     }
-                    JOptionPane.showInputDialog("¡Gracias por su compra!");
-                    aux = false;
+                    JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
+                    aux = true;
                     break;
                 case 4:
                     do {
-                        Integer.parseInt(JOptionPane.showInputDialog("Introduzca el dinero: "));
-                        centimos = entrada.nextInt();
+                        String centimosString = (JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
+                        centimos = Integer.parseInt(centimosString);
                         if (centimos < smint.getPrecioProducto()) {
-                            Integer.parseInt(JOptionPane.showInputDialog("Cantidad insuficiente."));
+                            JOptionPane.showMessageDialog(null, "Cantidad insuficiente.");
                         }
                     } while (centimos < smint.getPrecioProducto());
 
                     if (centimos == smint.getPrecioProducto()) {
-                        Integer.parseInt(JOptionPane.showInputDialog("Ha introducido la cantidad exacta. No tendrá cambio."));
+                        JOptionPane.showMessageDialog(null, "Ha introducido la cantidad exacta. No tendrá cambio.");
                     } else {
                         centimos -= smint.getPrecioProducto();
-                        Integer.parseInt(JOptionPane.showInputDialog("El cambio será de:"));
+                        JOptionPane.showMessageDialog(null, "El cambio será de:");
                         if (centimos / 200 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("Monedas de 2€: %d" + centimos / 200));
+                            JOptionPane.showMessageDialog(null, "Monedas de 2€: " + centimos / 200);
                             centimos %= 200;
                         }
                         if (centimos / 100 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("Monedas de 1€: %d" + centimos / 100));
+                            JOptionPane.showMessageDialog(null, "Monedas de 1€: " + centimos / 100);
                             centimos %= 100;
                         }
                         if (centimos / 50 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,50€: %d" + centimos / 50));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,50€: " + centimos / 50);
                             centimos %= 50;
                         }
                         if (centimos / 20 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,20€: %d" + centimos / 20));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,20€: " + centimos / 20);
                             centimos %= 20;
                         }
                         if (centimos / 10 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,10€: %d" + centimos / 10));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,10€: " + centimos / 10);
                             centimos %= 10;
                         }
                         if (centimos / 5 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,05€: %d" + centimos / 5));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,05€: " + centimos / 5);
                             centimos %= 5;
                         }
                         if (centimos / 2 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,02€: %d" + centimos / 2));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,02€: " + centimos / 2);
                             centimos %= 2;
                         }
                         if (centimos > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,01€: %d", centimos));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,01€: " + centimos);
                         }
                     }
-                    JOptionPane.showInputDialog("¡Gracias por su compra!");
-                    aux = false;
+                    JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
+                    aux = true;
                     break;
                 case 5:
                     do {
-                        Integer.parseInt(JOptionPane.showInputDialog("Ha seleccionado Fanta Naranja 500ml. Introduzca el dinero: "));
-                        centimos = entrada.nextInt();
+                        String centimosString = (JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
+                        centimos = Integer.parseInt(centimosString);
                         if (centimos < fantaNaranja.getPrecioProducto()) {
-                            Integer.parseInt(JOptionPane.showInputDialog("Cantidad insuficiente."));
+                            JOptionPane.showMessageDialog(null, "Cantidad insuficiente.");
                         }
                     } while (centimos < fantaNaranja.getPrecioProducto());
 
                     if (centimos == fantaNaranja.getPrecioProducto()) {
-                        Integer.parseInt(JOptionPane.showInputDialog("Ha introducido la cantidad exacta. No tendrá cambio."));
+                        JOptionPane.showMessageDialog(null, "Ha introducido la cantidad exacta. No tendrá cambio.");
                     } else {
                         centimos -= fantaNaranja.getPrecioProducto();
-                        Integer.parseInt(JOptionPane.showInputDialog("El cambio será de:"));
+                        JOptionPane.showMessageDialog(null, "El cambio será de:");
                         if (centimos / 200 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("Monedas de 2€: %d" + centimos / 200));
+                            JOptionPane.showMessageDialog(null, "Monedas de 2€: " + centimos / 200);
                             centimos %= 200;
                         }
                         if (centimos / 100 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("Monedas de 1€: %d" + centimos / 100));
+                            JOptionPane.showMessageDialog(null, "Monedas de 1€: " + centimos / 100);
                             centimos %= 100;
                         }
                         if (centimos / 50 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,50€: %d" + centimos / 50));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,50€: " + centimos / 50);
                             centimos %= 50;
                         }
                         if (centimos / 20 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,20€: %d" + centimos / 20));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,20€: " + centimos / 20);
                             centimos %= 20;
                         }
                         if (centimos / 10 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,10€: %d" + centimos / 10));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,10€: " + centimos / 10);
                             centimos %= 10;
                         }
                         if (centimos / 5 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,05€: %d" + centimos / 5));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,05€: " + centimos / 5);
                             centimos %= 5;
                         }
                         if (centimos / 2 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,02€: %d" + centimos / 2));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,02€: " + centimos / 2);
                             centimos %= 2;
                         }
                         if (centimos > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,01€: %d", centimos));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,01€: " + centimos);
                         }
                     }
-                    JOptionPane.showInputDialog("¡Gracias por su compra!");
-                    aux = false;
+                    JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
+                    aux = true;
                     break;
                 case 6:
                     do {
-                        Integer.parseInt(JOptionPane.showInputDialog("Ha seleccionado Caramelos Haribbo. Introduzca el dinero: "));
-                        centimos = entrada.nextInt();
+                        String centimosString = (JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
+                        centimos = Integer.parseInt(centimosString);
                         if (centimos < haribbo.getPrecioProducto()) {
-                            Integer.parseInt(JOptionPane.showInputDialog("Cantidad insuficiente."));
+                            JOptionPane.showMessageDialog(null, "Cantidad insuficiente.");
                         }
                     } while (centimos < haribbo.getPrecioProducto());
 
                     if (centimos == haribbo.getPrecioProducto()) {
-                        Integer.parseInt(JOptionPane.showInputDialog("Ha introducido la cantidad exacta. No tendrá cambio."));
+                        JOptionPane.showMessageDialog(null, "Ha introducido la cantidad exacta. No tendrá cambio.");
                     } else {
                         centimos -= haribbo.getPrecioProducto();
-                        Integer.parseInt(JOptionPane.showInputDialog("El cambio será de:"));
+                        JOptionPane.showMessageDialog(null, "El cambio será de:");
                         if (centimos / 200 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("Monedas de 2€: %d" + centimos / 200));
+                            JOptionPane.showMessageDialog(null, "Monedas de 2€: " + centimos / 200);
                             centimos %= 200;
                         }
                         if (centimos / 100 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("Monedas de 1€: %d" + centimos / 100));
+                            JOptionPane.showMessageDialog(null, "Monedas de 1€: " + centimos / 100);
                             centimos %= 100;
                         }
                         if (centimos / 50 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,50€: %d" + centimos / 50));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,50€: " + centimos / 50);
                             centimos %= 50;
                         }
                         if (centimos / 20 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,20€: %d" + centimos / 20));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,20€: " + centimos / 20);
                             centimos %= 20;
                         }
                         if (centimos / 10 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,10€: %d" + centimos / 10));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,10€: " + centimos / 10);
                             centimos %= 10;
                         }
                         if (centimos / 5 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,05€: %d" + centimos / 5));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,05€: " + centimos / 5);
                             centimos %= 5;
                         }
                         if (centimos / 2 > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,02€: %d" + centimos / 2));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,02€: " + centimos / 2);
                             centimos %= 2;
                         }
                         if (centimos > 0) {
-                            Integer.parseInt(JOptionPane.showInputDialog("%nMonedas de 0,01€: %d", centimos));
+                            JOptionPane.showMessageDialog(null, "Monedas de 0,01€: " + centimos);
                         }
                     }
-                    JOptionPane.showInputDialog("¡Gracias por su compra!");
-                    aux = false;
+                    JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
+                    aux = true;
                     break;
             }
         } while (!aux);
