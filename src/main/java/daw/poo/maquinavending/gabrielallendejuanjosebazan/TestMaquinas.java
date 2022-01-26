@@ -21,7 +21,14 @@ public class TestMaquinas {
         Productos fantaNaranja = new Productos("Fanta Naranja 500ml", 120);
         Productos haribbo = new Productos("Caramelos Haribbo", 200);
         Scanner entrada = new Scanner(System.in);
-        //AQUI ARRIBA FALTAN INSTANCIAR LAS BANDEJAS, QUE CONTENDRÁN CADA UNA LOS DIFERENTES PRODUCTOS.
+        // crear bandejas
+        Bandejas bandeja1 = new Bandejas(cocaCola, 1);
+        Bandejas bandeja2 = new Bandejas(kitKat, 2);
+        Bandejas bandeja3 = new Bandejas(agua, 3);
+        Bandejas bandeja4 = new Bandejas(smint, 4);
+        Bandejas bandeja5 = new Bandejas(fantaNaranja, 5);
+        Bandejas bandeja6 = new Bandejas(haribbo, 6);
+        
 
         String opcionString = (JOptionPane.showInputDialog("Introduzca un código: "));
         int opcionInt = Integer.parseInt(opcionString);
@@ -33,7 +40,7 @@ public class TestMaquinas {
         do {
             switch (opcionInt) {
                 //CAMBIAR LOS CASE POR CÓDIGO DE BANDEJAS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-                case 1:
+                case "bandeja1":
                     do {
                         String centimosString = (JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
                         centimos = Integer.parseInt(centimosString);
@@ -82,7 +89,7 @@ public class TestMaquinas {
                     JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
                     aux = true;
                     break;
-                case 2:
+                case bandeja2:
                     do {
                         String centimosString = (JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
                         centimos = Integer.parseInt(centimosString);
@@ -131,7 +138,7 @@ public class TestMaquinas {
                     JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
                     aux = true;
                     break;
-                case 3:
+                case bandeja3:
                     do {
                         String centimosString = (JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
                         centimos = Integer.parseInt(centimosString);
@@ -180,7 +187,7 @@ public class TestMaquinas {
                     JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
                     aux = true;
                     break;
-                case 4:
+                case bandeja4:
                     do {
                         String centimosString = (JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
                         centimos = Integer.parseInt(centimosString);
@@ -229,7 +236,7 @@ public class TestMaquinas {
                     JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
                     aux = true;
                     break;
-                case 5:
+                case bandeja5:
                     do {
                         String centimosString = (JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
                         centimos = Integer.parseInt(centimosString);
@@ -278,7 +285,7 @@ public class TestMaquinas {
                     JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
                     aux = true;
                     break;
-                case 6:
+                case bandeja6:
                     do {
                         String centimosString = (JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
                         centimos = Integer.parseInt(centimosString);

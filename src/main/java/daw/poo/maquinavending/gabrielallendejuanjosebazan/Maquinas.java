@@ -23,7 +23,7 @@ public class Maquinas {
     private Bandejas bandeja6;
     private boolean modoUsuario; //false modo usuario; true modo administrador; MIRAR EN EL MAIN PARA CAMBIARLO POR UN SWITCH.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     private boolean metodoPago; //false efectivo; true tarjeta.                 MIRAR EN EL MAIN PARA CAMBIARLO POR UN SWITCH.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    private UUID numeroSerie;
+    private static UUID numeroSerie;
 
     //Constructor con sus valores por defecto.
     public Maquinas() {
@@ -39,15 +39,15 @@ public class Maquinas {
         this.bandeja6 = bandeja6;
         this.modoUsuario = modoUsuario;
         this.metodoPago = metodoPago;
-
+        this.numeroSerie = UUID.randomUUID();
     }
 
     //Método NUMERO SERIE ¿?
-    public UUID numeroSerie() {
-        numeroSerie = UUID.randomUUID();
+    /* borrador: public static UUID numeroSerie() {
+        
 
         return numeroSerie;
-    }
+    } */
 
     //Getters.
     public Bandejas getBandeja1() {
@@ -82,7 +82,7 @@ public class Maquinas {
         return metodoPago;
     }
 
-    public UUID getNumeroSerie() {
+    public static UUID getNumeroSerie() {
         return numeroSerie;
     }
 
@@ -111,10 +111,7 @@ public class Maquinas {
         this.bandeja6 = bandeja6;
     }
 
-    // Revisar ->
-    public void setNumeroSerie(UUID numeroSerie) {
-        this.numeroSerie = numeroSerie;
-    }
+    
 
     public void metodoPago() {
         if (this.metodoPago == false) {
