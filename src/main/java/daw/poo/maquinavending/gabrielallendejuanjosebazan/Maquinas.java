@@ -21,6 +21,9 @@ public class Maquinas {
     private Bandejas bandeja4;
     private Bandejas bandeja5;
     private Bandejas bandeja6;
+    private Tarjetas tarjeta1;
+    private Tarjetas tarjeta2;
+    private Tarjetas tarjeta3;
     private boolean modoUsuario; //false modo usuario; true modo administrador; MIRAR EN EL MAIN PARA CAMBIARLO POR UN SWITCH.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     private boolean metodoPago; //false efectivo; true tarjeta.                 MIRAR EN EL MAIN PARA CAMBIARLO POR UN SWITCH.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     private static UUID numeroSerie;

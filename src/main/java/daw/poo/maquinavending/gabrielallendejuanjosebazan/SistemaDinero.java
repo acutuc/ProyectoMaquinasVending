@@ -23,11 +23,10 @@ public class SistemaDinero {
 
     //Constructor con valores por defecto.
     public SistemaDinero() {
-        
     }
 
     //GETTERS Y SETTERS.
-    public double getEfectivo() {
+    public double getEfectivo() { //UTILIZAR SÓLO CON ADMIN
         return efectivo;
     }
 
@@ -58,7 +57,11 @@ public class SistemaDinero {
     }
     
     
-    
+    //Método que va almacenando el dinero ingresado en la máquina.
+    public void almacenarDinero(int dineroIngresado){
+        this.efectivo = efectivo + dineroIngresado;
+        this.tarjeta = tarjeta + dineroIngresado;
+    }
     
     
 }
