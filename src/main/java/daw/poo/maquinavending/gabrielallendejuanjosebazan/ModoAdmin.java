@@ -30,11 +30,12 @@ public class ModoAdmin {
     private Random r = new Random();
     private String codAdmin;
 
-    public ModoAdmin(){};
-    
+    public ModoAdmin() {
+    }
+
     public void generarCodigoAdmin() {
 
-        // el código debe tener Una minúscula (a - z), Una mayúscula (A - Z), Un número (0 - 9), Uno de los siguientes caracteres especiales: # $ % &  ( ) * + , - .  : ; < = > @
+        // el código debe tener Una minúscula (a - z), Una mayúscula (A - Z), Un número (0 - 9), Uno de los siguientes caracteres especiales: # $ % & ( ) * + , - .  : ; < = > @
         char codLetra1;
         char codLetra2;
         int codCarEsp;
@@ -45,11 +46,11 @@ public class ModoAdmin {
         String carEsp;
 
         codLetra1 = (char) (r.nextInt(122 - 97) + 97);
-        
+
         letra1 = String.valueOf(codLetra1);
-        
+
         codLetra2 = (char) (r.nextInt(90 - 65) + 65);
-        
+
         letra2 = String.valueOf(codLetra2);
 
         String[] carEspArray = new String[16];
@@ -76,47 +77,52 @@ public class ModoAdmin {
         carEsp = carEspArray[codCarEsp];
 
         num = RandomStringUtils.randomNumeric(5);
-        
+
         //------
-        
-        codAdmin = letra1+letra2+num+carEsp;
+        codAdmin = letra1 + letra2 + num + carEsp;
 
     }
-    
-    public String mostrarCodigoAdmin(){
-        
+
+    public String mostrarCodigoAdmin() {
+
         return codAdmin;
-        
-    }
-
-//    public int consultarCodBandeja(Bandejas bandeja){
-//        
-//        return bandeja.getCodBandeja();
-//        
-//    }
-    
-    public int consultarCodBandeja(Maquinas maquina){
-
-        return maquina.getBandeja1().getCodBandeja();
 
     }
-    
-    public void cambiarCodigoBandeja(Bandejas bandeja, int codigoBandeja){
-        
-        bandeja.setCodBandeja(codigoBandeja);
-        
+
+    public int consultarCodBandeja(Maquinas maquina, Bandejas bandeja) {
+
+        return maquina.getBandeja(bandeja).getCodBandeja();
+
+    }
+
+    public void cambiarCodigoBandeja(Maquinas maquina, Bandejas bandeja, int codigoBandeja) {
+
+        maquina.getBandeja(bandeja).setCodBandeja(codigoBandeja);
+
+    }
+
+    public Productos consultarProducto(Maquinas maquina, Bandejas bandeja) {
+
+        return maquina.getBandeja(bandeja).getProducto();
+
+    }
+
+    public void cambiarProducto(Maquinas maquina, Bandejas bandeja, Productos producto) {
+
+        maquina.getBandeja(bandeja).setProducto(producto);
+
+    }
+
+    public int consultarStock(Maquinas maquina, Bandejas bandeja) {
+
+        return maquina.getBandeja(bandeja).getStockProducto();
+
     }
     
-    public Productos consultarProducto(Bandejas bandeja){
-        
-       return bandeja.getProducto1();
-        
-    }
-    
-    public void cambiarProducto(Bandejas bandeja, Productos producto){
-        
-        bandeja.setProducto1(producto);
-        
+    public void cambiarStock(Maquinas maquina, Bandejas bandeja, int stock) {
+
+        maquina.getBandeja(bandeja).setStockProducto(stock);
+
     }
     
     

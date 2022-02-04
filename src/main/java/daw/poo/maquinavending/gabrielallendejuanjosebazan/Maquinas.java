@@ -42,7 +42,7 @@ public class Maquinas {
         this.bandeja6 = bandeja6;
         this.modoUsuario = modoUsuario;
         this.metodoPago = metodoPago;
-        this.numeroSerie = UUID.randomUUID();
+        Maquinas.numeroSerie = UUID.randomUUID();
     }
 
     //Método NUMERO SERIE ¿?
@@ -51,39 +51,35 @@ public class Maquinas {
 
         return numeroSerie;
     } */
-
     @Override
     public String toString() {
         return "Maquinas{" + "bandeja1=" + bandeja1 + ", bandeja2=" + bandeja2 + ", bandeja3=" + bandeja3 + ", bandeja4=" + bandeja4 + ", bandeja5=" + bandeja5 + ", bandeja6=" + bandeja6 + ", tarjeta1=" + tarjeta1 + ", tarjeta2=" + tarjeta2 + ", tarjeta3=" + tarjeta3 + ", modoUsuario=" + modoUsuario + ", metodoPago=" + metodoPago + '}';
     }
 
-    
-    
     //Getters.
-    public Bandejas getBandeja1() {
-        return bandeja1;
+    public Bandejas getBandeja(Bandejas bandeja) {
+        return bandeja;
     }
 
-    public Bandejas getBandeja2() {
-        return bandeja2;
-    }
-
-    public Bandejas getBandeja3() {
-        return bandeja3;
-    }
-
-    public Bandejas getBandeja4() {
-        return bandeja4;
-    }
-
-    public Bandejas getBandeja5() {
-        return bandeja5;
-    }
-
-    public Bandejas getBandeja6() {
-        return bandeja6;
-    }
-
+//    public Bandejas getBandeja2() {
+//        return bandeja2;
+//    }
+//
+//    public Bandejas getBandeja3() {
+//        return bandeja3;
+//    }
+//
+//    public Bandejas getBandeja4() {
+//        return bandeja4;
+//    }
+//
+//    public Bandejas getBandeja5() {
+//        return bandeja5;
+//    }
+//
+//    public Bandejas getBandeja6() {
+//        return bandeja6;
+//    }
     public boolean isModoUsuario() {
         return modoUsuario;
     }
@@ -97,32 +93,29 @@ public class Maquinas {
     }
 
     //Setters. Set modo usuario y método de pago no hay. Cambiados por métodos.
-    public void setBandeja1(Bandejas bandeja1) {
-        this.bandeja1 = bandeja1;
+    public void setBandeja(Bandejas bandeja, Bandejas bandejaNuevo) {
+        bandeja = bandejaNuevo;
     }
 
-    public void setBandeja2(Bandejas bandeja2) {
-        this.bandeja2 = bandeja2;
-    }
-
-    public void setBandeja3(Bandejas bandeja3) {
-        this.bandeja3 = bandeja3;
-    }
-
-    public void setBandeja4(Bandejas bandeja4) {
-        this.bandeja4 = bandeja4;
-    }
-
-    public void setBandeja5(Bandejas bandeja5) {
-        this.bandeja5 = bandeja5;
-    }
-
-    public void setBandeja6(Bandejas bandeja6) {
-        this.bandeja6 = bandeja6;
-    }
-
-    
-
+//    public void setBandeja2(Bandejas bandeja2) {
+//        this.bandeja2 = bandeja2;
+//    }
+//
+//    public void setBandeja3(Bandejas bandeja3) {
+//        this.bandeja3 = bandeja3;
+//    }
+//
+//    public void setBandeja4(Bandejas bandeja4) {
+//        this.bandeja4 = bandeja4;
+//    }
+//
+//    public void setBandeja5(Bandejas bandeja5) {
+//        this.bandeja5 = bandeja5;
+//    }
+//
+//    public void setBandeja6(Bandejas bandeja6) {
+//        this.bandeja6 = bandeja6;
+//    }
     public void metodoPago() {
         if (this.metodoPago == false) {
             //Método de pago en efectivo.

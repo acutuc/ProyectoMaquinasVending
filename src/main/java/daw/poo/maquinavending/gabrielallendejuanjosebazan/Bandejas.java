@@ -4,7 +4,7 @@ public class Bandejas {
 
 // Atributos    
     private Productos producto;
-
+    private int stockProducto;
     private int codBandeja; //¿preferimos int o String?
 
 // Constructor sin parametrizar
@@ -13,24 +13,33 @@ public class Bandejas {
     }
 // Constructor parametrizado
 
-    public Bandejas(Productos producto, int codBandeja) {
+    public Bandejas(Productos producto, int stockProducto, int codBandeja) {
         this.producto = producto;
-
+        this.stockProducto = stockProducto;
         this.codBandeja = codBandeja;
     }
 
     @Override
     public String toString() {
-        return "Bandejas{" + "producto=" + producto + ", codBandeja=" + codBandeja + '}';
+        return "Bandejas{" + "producto=" + producto + ", stockProducto=" + stockProducto + ", codBandeja=" + codBandeja + '}';
     }
 
 // Setters y Getters    
-    public Productos getProducto1() {
+
+    public Productos getProducto() {
         return producto;
     }
 
-    public void setProducto1(Productos producto1) {
-        this.producto = producto1;
+    public void setProducto(Productos producto) {
+        this.producto = producto;
+    }
+
+    public int getStockProducto() {
+        return stockProducto;
+    }
+
+    public void setStockProducto(int stockProducto) {
+        this.stockProducto = stockProducto;
     }
 
     public int getCodBandeja() {
@@ -40,5 +49,6 @@ public class Bandejas {
     public void setCodBandeja(int codBandeja) {
         this.codBandeja = codBandeja;
     }
+
 
 }
