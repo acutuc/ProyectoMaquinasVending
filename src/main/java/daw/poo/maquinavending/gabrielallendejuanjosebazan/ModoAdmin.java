@@ -1,0 +1,124 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package daw.poo.maquinavending.gabrielallendejuanjosebazan;
+
+import java.util.Random;
+import org.apache.commons.lang3.RandomStringUtils;
+
+/**
+ *
+ * @author Naturalkid
+ */
+
+/*
+Cosas a hacer:
+- Generar código(s) admin
+- Introducir código(s) admin
+
+- Hacer que la máquina sepa que estemos con los permisos
+- Consultar y cambiar el código de las bandejas.
+- Consultar y cambiar el producto contenido en las bandejas.
+- Consultar y cambiar el stock de las bandejas
+- Consultar el efectivo que hay en la máquina y recaudar
+- Recargar efectivo
+- Consultar el dinero recaudado mediante tarjetas de crédito.
+ */
+public class ModoAdmin {
+
+    private Random r = new Random();
+    private String codAdmin;
+
+    public ModoAdmin(){};
+    
+    public void generarCodigoAdmin() {
+
+        // el código debe tener Una minúscula (a - z), Una mayúscula (A - Z), Un número (0 - 9), Uno de los siguientes caracteres especiales: # $ % &  ( ) * + , - .  : ; < = > @
+        char codLetra1;
+        char codLetra2;
+        int codCarEsp;
+
+        String letra1;
+        String letra2;
+        String num;
+        String carEsp;
+
+        codLetra1 = (char) (r.nextInt(122 - 97) + 97);
+        
+        letra1 = String.valueOf(codLetra1);
+        
+        codLetra2 = (char) (r.nextInt(90 - 65) + 65);
+        
+        letra2 = String.valueOf(codLetra2);
+
+        String[] carEspArray = new String[16];
+
+        carEspArray[0] = "#";
+        carEspArray[1] = "$";
+        carEspArray[2] = "%";
+        carEspArray[3] = "(";
+        carEspArray[4] = ")";
+        carEspArray[5] = "*";
+        carEspArray[6] = "+";
+        carEspArray[7] = ",";
+        carEspArray[8] = "-";
+        carEspArray[9] = ".";
+        carEspArray[10] = ":";
+        carEspArray[11] = ";";
+        carEspArray[12] = "<";
+        carEspArray[13] = ">";
+        carEspArray[14] = "=";
+        carEspArray[15] = "@";
+
+        codCarEsp = r.nextInt(carEspArray.length);
+
+        carEsp = carEspArray[codCarEsp];
+
+        num = RandomStringUtils.randomNumeric(5);
+        
+        //------
+        
+        codAdmin = letra1+letra2+num+carEsp;
+
+    }
+    
+    public String mostrarCodigoAdmin(){
+        
+        return codAdmin;
+        
+    }
+
+//    public int consultarCodBandeja(Bandejas bandeja){
+//        
+//        return bandeja.getCodBandeja();
+//        
+//    }
+    
+    public int consultarCodBandeja(Maquinas maquina){
+
+        return maquina.getBandeja1().getCodBandeja();
+
+    }
+    
+    public void cambiarCodigoBandeja(Bandejas bandeja, int codigoBandeja){
+        
+        bandeja.setCodBandeja(codigoBandeja);
+        
+    }
+    
+    public Productos consultarProducto(Bandejas bandeja){
+        
+       return bandeja.getProducto1();
+        
+    }
+    
+    public void cambiarProducto(Bandejas bandeja, Productos producto){
+        
+        bandeja.setProducto1(producto);
+        
+    }
+    
+    
+    
+}

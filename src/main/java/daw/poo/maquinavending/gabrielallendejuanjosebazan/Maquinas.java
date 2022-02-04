@@ -52,6 +52,13 @@ public class Maquinas {
         return numeroSerie;
     } */
 
+    @Override
+    public String toString() {
+        return "Maquinas{" + "bandeja1=" + bandeja1 + ", bandeja2=" + bandeja2 + ", bandeja3=" + bandeja3 + ", bandeja4=" + bandeja4 + ", bandeja5=" + bandeja5 + ", bandeja6=" + bandeja6 + ", tarjeta1=" + tarjeta1 + ", tarjeta2=" + tarjeta2 + ", tarjeta3=" + tarjeta3 + ", modoUsuario=" + modoUsuario + ", metodoPago=" + metodoPago + '}';
+    }
+
+    
+    
     //Getters.
     public Bandejas getBandeja1() {
         return bandeja1;
