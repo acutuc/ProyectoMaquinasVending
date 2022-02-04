@@ -1,7 +1,6 @@
 package daw.poo.maquinavending.gabrielallendejuanjosebazan;
 
 import java.util.Scanner;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,12 +14,12 @@ public class TestMaquinas {
      */
     public static void main(String[] args) {
         //Instanciación de objetos.
-        Productos cocaCola = new Productos("Coca-Cola 500ml", 120);
-        Productos kitKat = new Productos("Kit-Kat", 150);
-        Productos agua = new Productos("Agua 500ml", 100);
-        Productos smint = new Productos("Caramelos Smint", 100);
-        Productos fantaNaranja = new Productos("Fanta Naranja 500ml", 120);
-        Productos haribbo = new Productos("Caramelos Haribbo", 200);
+        Productos cocaCola = new Productos("Coca-Cola 500ml", 120, 10);
+        Productos kitKat = new Productos("Kit-Kat", 150, 10);
+        Productos agua = new Productos("Agua 500ml", 100, 10);
+        Productos smint = new Productos("Caramelos Smint", 100, 10);
+        Productos fantaNaranja = new Productos("Fanta Naranja 500ml", 120, 10);
+        Productos haribbo = new Productos("Caramelos Haribbo", 200, 10);
         Scanner entrada = new Scanner(System.in);
         // crear bandejas
         Bandejas bandeja1 = new Bandejas(cocaCola, 1);
@@ -30,7 +29,13 @@ public class TestMaquinas {
         Bandejas bandeja5 = new Bandejas(fantaNaranja, 5);
         Bandejas bandeja6 = new Bandejas(haribbo, 6);
 
-        String opcionString = (JOptionPane.showInputDialog("Introduzca un código: "));
+        JOptionPane.showMessageDialog(null, "Bienvenido a la Máquina Vending 3000", "vamos a robarle su dinero", 1);
+        String opcionString = (JOptionPane.showInputDialog("Introduzca un código: " + "\n" + bandeja1.getCodBandeja() + "    " + cocaCola.getNombreProducto() + " --> 1,20€"
+        + "\n" + bandeja2.getCodBandeja() + "    " + kitKat.getNombreProducto() + " --> 1,50€"
+        + "\n" + bandeja3.getCodBandeja() + "    " + agua.getNombreProducto() + " --> 1€"
+        + "\n" + bandeja4.getCodBandeja() + "    " + smint.getNombreProducto() + " --> 1€"
+        + "\n" + bandeja5.getCodBandeja() + "    " + fantaNaranja.getNombreProducto() + " --> 1,20€"
+        + "\n" + bandeja6.getCodBandeja() + "    " + haribbo.getNombreProducto() + " --> 2€"));
         int opcionInt = Integer.parseInt(opcionString);
 
         //Variable boolean auxiliar para salir del bucle.
@@ -43,7 +48,7 @@ public class TestMaquinas {
                 //CAMBIAR LOS CASE POR CÓDIGO DE BANDEJAS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
                 case 1:
                     do {
-                        String centimosString = (JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
+                        String centimosString = (JOptionPane.showInputDialog("Ha seleccionado " + cocaCola.getNombreProducto() + ". Introduzca el dinero: "));
                         centimos = Integer.parseInt(centimosString);
                         if (centimos < cocaCola.getPrecioProducto()) {
                             JOptionPane.showMessageDialog(null, "Cantidad insuficiente.");
@@ -55,6 +60,14 @@ public class TestMaquinas {
                     } else {
                         centimos -= cocaCola.getPrecioProducto();
                         JOptionPane.showMessageDialog(null, "El cambio será de:");
+                        if (centimos / 1000 > 0) {
+                            JOptionPane.showMessageDialog(null, "Billetes de 10€: " + centimos / 1000);
+                            centimos %= 1000;
+                        }
+                        if (centimos / 500 > 0) {
+                            JOptionPane.showMessageDialog(null, "Billetes de 5€: " + centimos / 500);
+                            centimos %= 500;
+                        }
                         if (centimos / 200 > 0) {
                             JOptionPane.showMessageDialog(null, "Monedas de 2€: " + centimos / 200);
                             centimos %= 200;
@@ -77,11 +90,12 @@ public class TestMaquinas {
                         }
                     }
                     JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
+                    cocaCola.productoVendido();
                     aux = true;
                     break;
                 case 2:
                     do {
-                        String centimosString = (JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
+                        String centimosString = (JOptionPane.showInputDialog("Ha seleccionado " + kitKat.getNombreProducto() + ". Introduzca el dinero: "));
                         centimos = Integer.parseInt(centimosString);
                         if (centimos < kitKat.getPrecioProducto()) {
                             JOptionPane.showMessageDialog(null, "Cantidad insuficiente.");
@@ -115,11 +129,12 @@ public class TestMaquinas {
                         }
                     }
                     JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
+                    kitKat.productoVendido();
                     aux = true;
                     break;
                 case 3:
                     do {
-                        String centimosString = (JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
+                        String centimosString = (JOptionPane.showInputDialog("Ha seleccionado " + agua.getNombreProducto() + ". Introduzca el dinero: "));
                         centimos = Integer.parseInt(centimosString);
                         if (centimos < agua.getPrecioProducto()) {
                             JOptionPane.showMessageDialog(null, "Cantidad insuficiente.");
@@ -153,11 +168,12 @@ public class TestMaquinas {
                         }
                     }
                     JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
+                    agua.productoVendido();
                     aux = true;
                     break;
                 case 4:
                     do {
-                        String centimosString = (JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
+                        String centimosString = (JOptionPane.showInputDialog("Ha seleccionado " + smint.getNombreProducto() + ". Introduzca el dinero: "));
                         centimos = Integer.parseInt(centimosString);
                         if (centimos < smint.getPrecioProducto()) {
                             JOptionPane.showMessageDialog(null, "Cantidad insuficiente.");
@@ -191,11 +207,12 @@ public class TestMaquinas {
                         }
                     }
                     JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
+                    smint.productoVendido();
                     aux = true;
                     break;
                 case 5:
                     do {
-                        String centimosString = (JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
+                        String centimosString = (JOptionPane.showInputDialog("Ha seleccionado " + fantaNaranja.getNombreProducto() + ". Introduzca el dinero: "));
                         centimos = Integer.parseInt(centimosString);
                         if (centimos < fantaNaranja.getPrecioProducto()) {
                             JOptionPane.showMessageDialog(null, "Cantidad insuficiente.");
@@ -229,11 +246,12 @@ public class TestMaquinas {
                         }
                     }
                     JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
+                    fantaNaranja.productoVendido();
                     aux = true;
                     break;
                 case 6:
                     do {
-                        String centimosString = (JOptionPane.showInputDialog("Ha seleccionado Coca-Cola 500ml. Introduzca el dinero: "));
+                        String centimosString = (JOptionPane.showInputDialog("Ha seleccionado " + haribbo.getNombreProducto() + ". Introduzca el dinero: "));
                         centimos = Integer.parseInt(centimosString);
                         if (centimos < haribbo.getPrecioProducto()) {
                             JOptionPane.showMessageDialog(null, "Cantidad insuficiente.");
@@ -267,6 +285,7 @@ public class TestMaquinas {
                         }
                     }
                     JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
+                    haribbo.productoVendido();
                     aux = true;
                     break;
             }
