@@ -27,6 +27,7 @@ public class Maquinas {
     private boolean modoUsuario; //false modo usuario; true modo administrador; MIRAR EN EL MAIN PARA CAMBIARLO POR UN SWITCH.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     private boolean metodoPago; //false efectivo; true tarjeta.                 MIRAR EN EL MAIN PARA CAMBIARLO POR UN SWITCH.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     private static UUID numeroSerie;
+    private Contenedor contenedor = new Contenedor();
 
     //Constructor con sus valores por defecto.
     public Maquinas() {
@@ -43,6 +44,7 @@ public class Maquinas {
         this.modoUsuario = modoUsuario;
         this.metodoPago = metodoPago;
         Maquinas.numeroSerie = UUID.randomUUID();
+
     }
 
     //Método NUMERO SERIE ¿?
@@ -53,7 +55,7 @@ public class Maquinas {
     } */
     @Override
     public String toString() {
-        return "Maquinas{" + "bandeja1=" + bandeja1 + ", bandeja2=" + bandeja2 + ", bandeja3=" + bandeja3 + ", bandeja4=" + bandeja4 + ", bandeja5=" + bandeja5 + ", bandeja6=" + bandeja6 + ", tarjeta1=" + tarjeta1 + ", tarjeta2=" + tarjeta2 + ", tarjeta3=" + tarjeta3 + ", modoUsuario=" + modoUsuario + ", metodoPago=" + metodoPago + '}';
+        return "Maquinas{" + "bandeja1=" + bandeja1 + ", bandeja2=" + bandeja2 + ", bandeja3=" + bandeja3 + ", bandeja4=" + bandeja4 + ", bandeja5=" + bandeja5 + ", bandeja6=" + bandeja6 + ", tarjeta1=" + tarjeta1 + ", tarjeta2=" + tarjeta2 + ", tarjeta3=" + tarjeta3 + ", modoUsuario=" + modoUsuario + ", metodoPago=" + metodoPago + ", contenedor=" + contenedor + '}';
     }
 
     //Getters.
@@ -132,4 +134,14 @@ public class Maquinas {
             //Modo admin activado.
         }
     }
+
+    public Contenedor getContenedor() {
+        return contenedor;
+    }
+
+    public void setContenedor(Contenedor contenedor) {
+        this.contenedor = contenedor;
+    }
+    
+    
 }

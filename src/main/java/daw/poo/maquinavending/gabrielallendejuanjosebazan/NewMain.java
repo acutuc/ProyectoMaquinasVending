@@ -33,6 +33,7 @@ public class NewMain {
         Productos smint = new Productos("Caramelos Smint", 100);
         Productos fantaNaranja = new Productos("Fanta Naranja 500ml", 120);
         Productos haribbo = new Productos("Caramelos Haribbo", 200);
+        Productos productoElegido;
         // crear bandejas
         Bandejas bandeja1 = new Bandejas(cocaCola, 15, 1);
         Bandejas bandeja2 = new Bandejas(kitKat, 15, 2);
@@ -54,6 +55,13 @@ public class NewMain {
         System.out.println(ma.consultarStock(maquina1, bandeja1));
         ma.cambiarStock(maquina1, bandeja1, 10);
         System.out.println(ma.consultarStock(maquina1, bandeja1));
+    
+          System.out.println(maquina1.getContenedor());
+          //estructura para mover el producto escogido al contenedor
+          productoElegido = agua;
+          maquina1.getContenedor().setProductoContenedor(productoElegido);
+          System.out.println(maquina1.getContenedor().getProductoContenedor());
+          //
     }
 
 }

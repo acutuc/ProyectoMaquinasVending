@@ -8,16 +8,18 @@ public class Contenedor {
 
     }
 
-    public Contenedor(Productos productoActual) {
-        this.productoActual = productoActual;
-    }
-
-    public Productos getProductoActual() {
+    public Productos getProductoContenedor() {
         return productoActual;
     }
 
-    public void setProductoActual(Productos productoActual) {
+
+    public void setProductoContenedor(Productos productoActual) {
         this.productoActual = productoActual;
+    }
+
+    @Override
+    public String toString() {
+        return "Contenedor{" + "productoActual=" + productoActual + '}';
     }
     
     

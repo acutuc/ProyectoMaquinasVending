@@ -9,26 +9,26 @@ import javax.swing.JOptionPane;
  */
 public class TestMaquinas {
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
         //Instanciación de objetos.
-        Productos cocaCola = new Productos("Coca-Cola 500ml", 120, 10);
-        Productos kitKat = new Productos("Kit-Kat", 150, 10);
-        Productos agua = new Productos("Agua 500ml", 100, 10);
-        Productos smint = new Productos("Caramelos Smint", 100, 10);
-        Productos fantaNaranja = new Productos("Fanta Naranja 500ml", 120, 10);
-        Productos haribbo = new Productos("Caramelos Haribbo", 200, 10);
+        Productos cocaCola = new Productos("Coca-Cola 500ml", 120);
+        Productos kitKat = new Productos("Kit-Kat", 150);
+        Productos agua = new Productos("Agua 500ml", 100);
+        Productos smint = new Productos("Caramelos Smint", 100);
+        Productos fantaNaranja = new Productos("Fanta Naranja 500ml", 120);
+        Productos haribbo = new Productos("Caramelos Haribbo", 200);
         Scanner entrada = new Scanner(System.in);
         // crear bandejas
-        Bandejas bandeja1 = new Bandejas(cocaCola, 1);
-        Bandejas bandeja2 = new Bandejas(kitKat, 2);
-        Bandejas bandeja3 = new Bandejas(agua, 3);
-        Bandejas bandeja4 = new Bandejas(smint, 4);
-        Bandejas bandeja5 = new Bandejas(fantaNaranja, 5);
-        Bandejas bandeja6 = new Bandejas(haribbo, 6);
-
+        Bandejas bandeja1 = new Bandejas(cocaCola, 10, 1);
+        Bandejas bandeja2 = new Bandejas(kitKat, 10, 2);
+        Bandejas bandeja3 = new Bandejas(agua, 10, 3);
+        Bandejas bandeja4 = new Bandejas(smint, 10, 4);
+        Bandejas bandeja5 = new Bandejas(fantaNaranja, 10, 5);
+        Bandejas bandeja6 = new Bandejas(haribbo, 10, 6);
+        
+        Productos productoElegido;
+        
         JOptionPane.showMessageDialog(null, "Bienvenido a la Máquina Vending 3000", "vamos a robarle su dinero", 1);
         String opcionString = (JOptionPane.showInputDialog("Introduzca un código: " + "\n" + bandeja1.getCodBandeja() + "    " + cocaCola.getNombreProducto() + " --> 1,20€"
         + "\n" + bandeja2.getCodBandeja() + "    " + kitKat.getNombreProducto() + " --> 1,50€"
@@ -90,7 +90,9 @@ public class TestMaquinas {
                         }
                     }
                     JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
-                    cocaCola.productoVendido();
+                    // Incio de proceso de entrega de producto y modificación del stack
+                    productoElegido = cocaCola;
+                    // fin de este proceso
                     aux = true;
                     break;
                 case 2:
@@ -129,7 +131,9 @@ public class TestMaquinas {
                         }
                     }
                     JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
-                    kitKat.productoVendido();
+                    // Incio de proceso de entrega de producto y modificación del stack
+                    productoElegido = kitKat;
+                    // fin de este proceso
                     aux = true;
                     break;
                 case 3:
@@ -168,7 +172,9 @@ public class TestMaquinas {
                         }
                     }
                     JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
-                    agua.productoVendido();
+                    // Incio de proceso de entrega de producto y modificación del stack
+                    productoElegido = agua;
+                    // fin de este proceso
                     aux = true;
                     break;
                 case 4:
@@ -207,7 +213,9 @@ public class TestMaquinas {
                         }
                     }
                     JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
-                    smint.productoVendido();
+                    // Incio de proceso de entrega de producto y modificación del stack
+                    productoElegido = smint;
+                    // fin de este proceso
                     aux = true;
                     break;
                 case 5:
@@ -246,7 +254,9 @@ public class TestMaquinas {
                         }
                     }
                     JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
-                    fantaNaranja.productoVendido();
+                    // Incio de proceso de entrega de producto y modificación del stack
+                    productoElegido = fantaNaranja;
+                    // fin de este proceso
                     aux = true;
                     break;
                 case 6:
@@ -285,7 +295,9 @@ public class TestMaquinas {
                         }
                     }
                     JOptionPane.showMessageDialog(null, "¡Gracias por su compra!");
-                    haribbo.productoVendido();
+                    // Incio de proceso de entrega de producto y modificación del stack
+                    productoElegido = haribbo;
+                    // fin de este proceso
                     aux = true;
                     break;
             }
