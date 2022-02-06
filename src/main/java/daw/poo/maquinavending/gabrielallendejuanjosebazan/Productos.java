@@ -47,8 +47,8 @@ public class Productos {
         }
         this.precioProducto = precioProducto;
     }
-
-        
+   
+            
     //toString.
 
     @Override
