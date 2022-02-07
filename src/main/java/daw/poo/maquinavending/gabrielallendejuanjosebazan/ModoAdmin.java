@@ -4,6 +4,8 @@
  */
 package daw.poo.maquinavending.gabrielallendejuanjosebazan;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.Random;
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -29,6 +31,7 @@ public class ModoAdmin {
 
     private Random r = new Random();
     private String codAdmin;
+    private LocalDate ultimaRecaudacion;
 
     public ModoAdmin() {
     }
@@ -118,13 +121,42 @@ public class ModoAdmin {
         return maquina.getBandeja(bandeja).getStockProducto();
 
     }
-    
+
     public void cambiarStock(Maquinas maquina, Bandejas bandeja, int stock) {
 
-        maquina.getBandeja(bandeja).setStockProducto(stock);
+        if (stock < 15 || stock > 0) {
+            maquina.getBandeja(bandeja).setStockProducto(stock);
+        }
 
     }
-    
-    
-    
+
+//    - Consultar el efectivo que hay en la máquina y recaudar
+//- Recargar efectivo
+    public Efectivo consultarEfectivo(Maquinas maquina) {
+
+        return maquina.getEfectivoMaquina();
+
+    }
+
+    public void recaudarEfectivo(Maquinas maquina) {
+
+        Efectivo efectivoRecaudado = new Efectivo(0, 0, 0, 0, 0, 0, 0, 0);
+        maquina.setEfectivoMaquina(efectivoRecaudado);
+
+        this.ultimaRecaudacion = LocalDate.now();
+
+    }
+
+    public LocalDate verUltimaRecaudacion() {
+
+        return this.ultimaRecaudacion;
+
+    }
+
+    public void recargarEfectivo(Maquinas maquina, Efectivo efectivoARecargar) {
+
+        maquina.setEfectivoMaquina(efectivoARecargar);
+
+    }
+
 }

@@ -1,5 +1,7 @@
 package daw.poo.maquinavending.gabrielallendejuanjosebazan;
 
+import java.util.Arrays;
+
 /**
  *
  * @author Gabriel
@@ -23,8 +25,6 @@ public class Efectivo {
         this.cantidadMonedas[6] = 1; //1 billete de 10€
         this.cantidadMonedas[7] = 1; //1 billete de 20€
     }
-    
-   
 
     public int[] getCantidadMonedas() {
         return cantidadMonedas;
@@ -43,4 +43,23 @@ public class Efectivo {
     public void retirarMoneda(int monedaRetirada, int cantidadMonedas) {
         this.cantidadMonedas[monedaRetirada] = cantidadMonedas;
     }
+
+    public Efectivo(int moneda10Int, int moneda20Int, int moneda50Int, int moneda1Int, int moneda2Int, int billete5Int, int billete10Int, int billete20Int) {
+
+        this.cantidadMonedas[0] = moneda10Int; //1 moneda de 0,10€
+        this.cantidadMonedas[1] = moneda20Int; //1 moneda de 0,20€
+        this.cantidadMonedas[2] = moneda50Int; //1 moneda de 0,50€
+        this.cantidadMonedas[3] = moneda1Int; //1 moneda de 1€
+        this.cantidadMonedas[4] = moneda2Int; //1 moneda de 2€
+        this.cantidadMonedas[5] = billete5Int; //1 billete de 5€
+        this.cantidadMonedas[6] = billete10Int; //1 billete de 10€
+        this.cantidadMonedas[7] = billete20Int; //1 billete de 20€
+
+    }
+
+    @Override
+    public String toString() {
+        return "Efectivo{" + "valorDinero=" + Arrays.toString(valorDinero) + ", cantidadMonedas=" + Arrays.toString(cantidadMonedas) + '}';
+    }
+
 }
