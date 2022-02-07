@@ -2,6 +2,7 @@ package daw.poo.maquinavending.gabrielallendejuanjosebazan;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 /**
@@ -1041,7 +1042,7 @@ public class TestMaquinas {
                                 // debes, aquí, además de mostrar el dinero recaudado, dar la opción de recaudar y recargar
                                 String[] opcionesRecaudacion = {"Recaudar", "Recargar"};
 
-                                int opcionRecaudacion = (JOptionPane.showOptionDialog(null, "Recaudación en Efectivo " + mAdmin.consultarEfectivo(maquina1) + "\n Ultima recolecta: " + mAdmin.verUltimaRecaudacion(), null, JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcionesRecaudacion, null));
+                                int opcionRecaudacion = (JOptionPane.showOptionDialog(null, "Recaudación en Efectivo " + Arrays.toString(maquina1.getEfectivoMaquina().getCantidadMonedas()) + "\n Ultima recolecta: " + mAdmin.verUltimaRecaudacion(), null, JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcionesRecaudacion, null));
 
                                 switch (opcionRecaudacion) {
                                     case 0:
@@ -1570,7 +1571,7 @@ public class TestMaquinas {
                                 // debes, aquí, además de mostrar el dinero recaudado, dar la opción de recaudar y recargar
                                 String[] opcionesRecaudacion = {"Recaudar", "Recargar"};
 
-                                int opcionRecaudacion = (JOptionPane.showOptionDialog(null, "Recaudación en Efectivo " + mAdmin.consultarEfectivo(maquina1) + "\n Ultima recolecta: " + mAdmin.verUltimaRecaudacion(), null, JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcionesRecaudacion, null));
+                                int opcionRecaudacion = (JOptionPane.showOptionDialog(null, "Recaudación en Efectivo " + Arrays.toString(maquina1.getEfectivoMaquina().getCantidadMonedas()) + "\n Ultima recolecta: " + mAdmin.verUltimaRecaudacion(), null, JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcionesRecaudacion, null));
 
                                 switch (opcionRecaudacion) {
                                     case 0:
