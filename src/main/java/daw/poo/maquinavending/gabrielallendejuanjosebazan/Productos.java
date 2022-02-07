@@ -37,7 +37,7 @@ public class Productos {
         this.nombreProducto = nombreProducto;
     }
 
-    public double getPrecioProducto() {
+    public int getPrecioProducto() {
         return precioProducto;
     }
 

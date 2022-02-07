@@ -14,6 +14,7 @@ public class Tarjetas {
     private final String NUMERO_TARJETA;
     private final YearMonth FECHA_CADUCIDAD;
     private final String CVV;
+    private int dineroAcumulado;
 
     //Constructor con sus atributos con valores predeterminados.
     public Tarjetas() {
@@ -23,6 +24,7 @@ public class Tarjetas {
         this.FECHA_CADUCIDAD = YearMonth.of(2023, 10);
         //Generamos el CVV con 3 dígitos.
         this.CVV = RandomStringUtils.randomNumeric(3);
+        this.dineroAcumulado = dineroAcumulado;
     }
    //No ponemos constructor parametrizado, pues entendemos que un usuario no tiene libertad de crear tarjetas.
     
@@ -39,10 +41,24 @@ public class Tarjetas {
         return CVV;
     }
 
+    public int getDineroAcumulado() {
+        return dineroAcumulado;
+    }
+
+    public void setDineroAcumulado(int dineroAcumulado) {
+        this.dineroAcumulado = dineroAcumulado;
+    }
+    
+    
+    
     //toString.
     @Override
     public String toString() {
-        return "Tarjetas: " + "\tNúmero de tarjeta: " + NUMERO_TARJETA + "\nFecha de caducidad: " + FECHA_CADUCIDAD + "\nCVV: " + CVV;
+        return "Tarjetas{" + "NUMERO_TARJETA=" + NUMERO_TARJETA + ", FECHA_CADUCIDAD=" + FECHA_CADUCIDAD + ", CVV=" + CVV + ", dineroAcumulado=" + dineroAcumulado + '}';
+    }
+    
+    public void ventaRealizada(int cantidadIngresada){
+        this.dineroAcumulado = dineroAcumulado + cantidadIngresada;
     }
     
     

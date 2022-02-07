@@ -29,13 +29,15 @@ public class Maquinas {
     private static UUID numeroSerie;
     private Contenedor contenedor;
     private Efectivo efectivoMaquina;
+    private int recaudadoTarjeta;
+    private String direccionFisica;
 
     //Constructor con sus valores por defecto.
     public Maquinas() {
     }
 
     //Constructor parametrizado.
-    public Maquinas(Bandejas bandeja1, Bandejas bandeja2, Bandejas bandeja3, Bandejas bandeja4, Bandejas bandeja5, Bandejas bandeja6, Tarjetas tarjeta1, Tarjetas tarjeta2, Tarjetas tarjeta3, boolean modoUsuario, boolean metodoPago,  Contenedor contenedor, Efectivo efectivoMaquina) {
+    public Maquinas(Bandejas bandeja1, Bandejas bandeja2, Bandejas bandeja3, Bandejas bandeja4, Bandejas bandeja5, Bandejas bandeja6, Tarjetas tarjeta1, Tarjetas tarjeta2, Tarjetas tarjeta3, boolean modoUsuario, boolean metodoPago,  Contenedor contenedor, Efectivo efectivoMaquina, String direccionFisica, int recaudadoTarjeta) {
         this.bandeja1 = bandeja1;
         this.bandeja2 = bandeja2;
         this.bandeja3 = bandeja3;
@@ -50,6 +52,8 @@ public class Maquinas {
         Maquinas.numeroSerie = UUID.randomUUID();
         this.contenedor = contenedor;
         this.efectivoMaquina = efectivoMaquina;
+        this.recaudadoTarjeta = recaudadoTarjeta;
+        this.direccionFisica = direccionFisica;
 
     }
 
@@ -59,9 +63,10 @@ public class Maquinas {
 
         return numeroSerie;
     } */
+
     @Override
     public String toString() {
-        return "Maquinas{" + "bandeja1=" + bandeja1 + ", bandeja2=" + bandeja2 + ", bandeja3=" + bandeja3 + ", bandeja4=" + bandeja4 + ", bandeja5=" + bandeja5 + ", bandeja6=" + bandeja6 + ", tarjeta1=" + tarjeta1 + ", tarjeta2=" + tarjeta2 + ", tarjeta3=" + tarjeta3 + ", modoUsuario=" + modoUsuario + ", metodoPago=" + metodoPago + ", contenedor=" + contenedor + '}';
+        return "Maquinas{" + "bandeja1=" + bandeja1 + ", bandeja2=" + bandeja2 + ", bandeja3=" + bandeja3 + ", bandeja4=" + bandeja4 + ", bandeja5=" + bandeja5 + ", bandeja6=" + bandeja6 + ", tarjeta1=" + tarjeta1 + ", tarjeta2=" + tarjeta2 + ", tarjeta3=" + tarjeta3 + ", modoUsuario=" + modoUsuario + ", metodoPago=" + metodoPago + ", contenedor=" + contenedor + ", efectivoMaquina=" + efectivoMaquina + ", recaudadoTarjeta=" + recaudadoTarjeta + ", direccionFisica=" + direccionFisica + '}';
     }
 
     //Getters.
@@ -214,6 +219,22 @@ public class Maquinas {
 
     public void setEfectivoMaquina(Efectivo efectivoMaquina) {
         this.efectivoMaquina = efectivoMaquina;
+    }
+
+    public String getDireccionFisica() {
+        return direccionFisica;
+    }
+
+    public void setDireccionFisica(String direccionFisica) {
+        this.direccionFisica = direccionFisica;
+    }
+
+    public int getRecaudadoTarjeta() {
+        return recaudadoTarjeta;
+    }
+
+    public void setRecaudadoTarjeta(int recaudadoTarjeta) {
+        this.recaudadoTarjeta = recaudadoTarjeta;
     }
     
     
