@@ -729,9 +729,20 @@ public class TestMaquinas {
                     // case del MODO ADMIN
                     case 6:
 
-                        String[] opcionesModoAdmin = {"Apagar Dispositivo", "Consultar Código de Bandeja", "Modificar Código de Bandeja", "Consultar Producto", "Cambiar Producto", "Consultar Stock", "Cambiar Stock", "Consultar Efectivo", "Consultar Recaudado por Tarjeta"};
+                        String[] opcionesModoAdmin = {"Apagar Dispositivo", "1", "2", "3", "4", "5", "6", "7", "8"};
 
-                        int opcionModoAdmin = (JOptionPane.showOptionDialog(null, "Usted está en Modo Administrador, que desea hacer.", null, JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcionesModoAdmin, null));
+                        int opcionModoAdmin = (JOptionPane.showOptionDialog(null, "Usted está en Modo Administrador, que desea hacer."
+                                + "\n [Número de Serie: " + maquina1.getNumeroSerie() + "]"
+                                + "\n "
+                                + "\n 1. Consultar Código de Bandeja "
+                                + "\n 2. Modificar Código de Bandeja "
+                                + "\n 3. Consultar Producto"
+                                + "\n 4. Cambiar Producto"
+                                + "\n 5. Consultar Stock"
+                                + "\n 6. Cambiar Stock"
+                                + "\n 7. Consultar Efectivo"
+                                + "\n 8. Consultar Recaudado por Tarjeta"
+                                + "\n ", null, JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcionesModoAdmin, null));
 
                         switch (opcionModoAdmin) {
 
@@ -1247,9 +1258,20 @@ public class TestMaquinas {
                         break;
                     case 6:
 
-                        String[] opcionesModoAdmin = {"Apagar Dispositivo", "Consultar Código de Bandeja", "Modificar Código de Bandeja", "Consultar Producto", "Cambiar Producto", "Consultar Stock", "Cambiar Stock", "Consultar Efectivo", "Consultar Recaudado por Tarjeta"};
+                        String[] opcionesModoAdmin = {"Apagar Dispositivo", "1", "2", "3", "4", "5", "6", "7", "8"};
 
-                        int opcionModoAdmin = (JOptionPane.showOptionDialog(null, "Usted está en Modo Administrador, que desea hacer.", null, JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcionesModoAdmin, null));
+                        int opcionModoAdmin = (JOptionPane.showOptionDialog(null, "Usted está en Modo Administrador, que desea hacer."
+                                + "\n [Número de Serie: " + maquina1.getNumeroSerie() + "]"
+                                + "\n "
+                                + "\n 1. Consultar Código de Bandeja "
+                                + "\n 2. Modificar Código de Bandeja "
+                                + "\n 3. Consultar Producto"
+                                + "\n 4. Cambiar Producto"
+                                + "\n 5. Consultar Stock"
+                                + "\n 6. Cambiar Stock"
+                                + "\n 7. Consultar Efectivo"
+                                + "\n 8. Consultar Recaudado por Tarjeta"
+                                + "\n ", null, JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opcionesModoAdmin, null));
 
                         switch (opcionModoAdmin) {
 
