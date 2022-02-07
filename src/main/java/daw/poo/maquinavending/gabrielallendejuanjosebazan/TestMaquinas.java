@@ -32,7 +32,15 @@ public class TestMaquinas {
         Maquinas maquina1 = new Maquinas(bandeja1, bandeja2, bandeja3, bandeja4, bandeja5, bandeja6, tarjeta1, tarjeta2, tarjeta3, false, false, contenedor, efectivo);
         Productos productoElegido;
 
+        
         JOptionPane.showMessageDialog(null, "Bienvenido a la Máquina Vending 3000", "¡Hola usuario!", 1);
+        //Array para implementar en el JOptionPane de métodos de pago.
+        String[] arrayOpciones = {"Efectivo", "Tarjeta", "Cancelar"};
+        //JOptionPane para elegir entre Efectivo, Tarjeta o Cancelar la compra.
+        int opcionesInt = JOptionPane.showOptionDialog(null, "Seleccione un método de pago: ", null, 0, 1, null, arrayOpciones, null);
+        //If's para intercambiar entre las opciones elegidas, pudiendo ser: Efectivo, Tarjeta o Cancelar.
+        //If que entra en las interacciones de Efectivo.
+        if(opcionesInt == 0){
         String opcionString = (JOptionPane.showInputDialog("Introduzca un código: " + "\n" + bandeja1.getCodBandeja() + "    " + cocaCola.getNombreProducto() + " --> 1,20€"
                 + "\n" + bandeja2.getCodBandeja() + "    " + kitKat.getNombreProducto() + " --> 1,50€"
                 + "\n" + bandeja3.getCodBandeja() + "    " + agua.getNombreProducto() + " --> 1€"
@@ -683,6 +691,13 @@ public class TestMaquinas {
                     break;
             }
         } while (!aux);
+        }
+        if (opcionesInt == 1){
+            //PAGO CON TARJETA.
+        } if(opcionesInt == 2){
+            JOptionPane.showMessageDialog(null, "Salir de la compra.");
+        }
+        
     }
     
 }
